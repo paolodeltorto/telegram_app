@@ -9,6 +9,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DependencyInjector(
           child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Telegram App',
         theme: _theme(context),
         darkTheme: _darkTheme(context),

@@ -1,6 +1,11 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:telegram_app/cubits/dark_mode_cubit.dart';
+import 'package:telegram_app/providers/shared_preferences_provider_page.dart';
 
 class DependencyInjector extends StatelessWidget {
   final Widget child;
@@ -11,10 +16,20 @@ class DependencyInjector extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => child;
+  Widget build(BuildContext context) => _providers(
+        child: _blocs(
+          child: child,
+        ),
+      );
 
   Widget _providers({required Widget child}) => MultiProvider(
-        providers: const [],
+        providers: [
+          Provider<SharedPreferencesProvider>(
+            create: (_) => SharedPreferencesProvider(
+              sharedPreferences: SharedPreferences.getInstance(),
+            ),
+          )
+        ],
         child: child,
       );
   Widget _mappers({required Widget child}) => MultiProvider(
@@ -26,7 +41,13 @@ class DependencyInjector extends StatelessWidget {
         child: child,
       );
   Widget _blocs({required Widget child}) => MultiBlocProvider(
-        providers: const [],
+        providers: [
+          BlocProvider<DarkModeCubit>(
+            create: (context) => DarkModeCubit(
+              preferencesProvider: context.read(),
+            )..init(),
+          )
+        ],
         child: child,
       );
 }
