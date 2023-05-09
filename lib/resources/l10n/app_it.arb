@@ -1,3 +1,9 @@
 {
-    "app_name": "Telegram App"
+    "app_name": "Telegram App",
+
+    "action_open_settings": "Impostazioni",
+
+
+    "label_no_connection_msg1": "Oh no!!!!!",
+    "label_no_connection_msg2": "Nessuna connessione disponibile!"
 }

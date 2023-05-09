@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <user-permission android:name="android.permission.INTERNET"/>
+    
     <application
+        android:userCleartextTraffic="true"
         android:label="telegram_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
