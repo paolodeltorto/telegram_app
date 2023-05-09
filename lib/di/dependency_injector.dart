@@ -14,19 +14,19 @@ class DependencyInjector extends StatelessWidget {
   Widget build(BuildContext context) => child;
 
   Widget _providers({required Widget child}) => MultiProvider(
-        providers: [],
+        providers: const [],
         child: child,
       );
   Widget _mappers({required Widget child}) => MultiProvider(
-        providers: [],
+        providers: const [],
         child: child,
       );
   Widget _repositories({required Widget child}) => MultiRepositoryProvider(
-        providers: [],
+        providers: const [],
         child: child,
       );
   Widget _blocs({required Widget child}) => MultiBlocProvider(
-        providers: [],
+        providers: const [],
         child: child,
       );
 }
