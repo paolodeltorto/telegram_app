@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:telegram_app/cubits/dark_mode_cubit.dart';
 import 'package:telegram_app/di/dependency_injector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -8,14 +10,25 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DependencyInjector(
-          child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Telegram App',
-        theme: _theme(context),
-        darkTheme: _darkTheme(context),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-      ));
+        child: _themeSelector(
+          (context, mode) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Telegram App',
+            theme: _theme(context),
+            darkTheme: _darkTheme(context),
+            themeMode: mode,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+          ),
+        ),
+      );
+
+  Widget _themeSelector(
+          Widget Function(BuildContext context, ThemeMode mode) widget) =>
+      BlocBuilder<DarkModeCubit, bool>(
+        builder: (context, darkModeEnabled) =>
+            widget(context, darkModeEnabled ? ThemeMode.dark : ThemeMode.light),
+      );
 
   ThemeData _theme(BuildContext context) => ThemeData(
       primaryColor: Colors.lightBlue,
