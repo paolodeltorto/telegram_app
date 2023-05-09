@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram_app/cubits/dark_mode_cubit.dart';
 import 'package:telegram_app/di/dependency_injector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:telegram_app/pages/home_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -19,6 +20,7 @@ class App extends StatelessWidget {
             themeMode: mode,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
+            home: const HomePage(),
           ),
         ),
       );
