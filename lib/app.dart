@@ -20,7 +20,7 @@ class App extends StatelessWidget {
             themeMode: mode,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: HomePage(),
+            home: const HomePage(),
           ),
         ),
       );
