@@ -6,7 +6,16 @@ class HomePage extends ConnectivityWidget {
 
   @override
   Widget connectedBuild(BuildContext context) => Scaffold(
-          body: Container(
-        child: const Text('Home Page'),
+      appBar: AppBar(
+        title: const Text('Telegram App'),
+      ),
+      body: const Center(
+        child: Text(
+          'Home Page',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
       ));
 }
