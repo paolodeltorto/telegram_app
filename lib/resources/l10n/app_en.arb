@@ -2,6 +2,8 @@
     "app_name": "Telegram App",
 
     "action_open_settings": "Open Settings",
+    "action_start_chatting": "Start cahtting",
+
 
     "label_no_connection_msg1": "Oh no!!!!!",
     "label_no_connection_msg2": "No connection available!"

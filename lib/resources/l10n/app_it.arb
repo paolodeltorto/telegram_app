@@ -2,6 +2,7 @@
     "app_name": "Telegram App",
 
     "action_open_settings": "Impostazioni",
+    "action_start_chatting": "Inizia a messaggiare",
 
 
     "label_no_connection_msg1": "Oh no!!!!!",
