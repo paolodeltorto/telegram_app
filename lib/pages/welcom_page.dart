@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:telegram_app/cubits/welcome_cubit.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        body: Container(
-          padding: const EdgeInsets.all(32),
-          width: double.maxFinite,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _sliderContainer(context),
-              _startMessagingButton(context),
-            ],
-          ),
-        ),
+  Widget build(_) => _welcomeCubit(
+      child: LayoutBuilder(
+          builder: (context, _) => Scaffold(
+                body: Container(
+                  padding: const EdgeInsets.all(32),
+                  width: double.maxFinite,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      _sliderContainer(context),
+                      _startMessagingButton(context),
+                    ],
+                  ),
+                ),
+              )));
+
+  Widget _welcomeCubit({required Widget child}) => BlocProvider(
+        create: (_) => WelcomeCubit(),
+        child: child,
       );
 
   Widget _sliderContainer(BuildContext context) => Expanded(
@@ -65,6 +74,7 @@ class WelcomePage extends StatelessWidget {
       child: PageView.builder(
         itemBuilder: (context, index) => widgets[index],
         itemCount: widgets.length,
+        controller: context.read<WelcomeCubit>().controller,
       ),
     );
   }
