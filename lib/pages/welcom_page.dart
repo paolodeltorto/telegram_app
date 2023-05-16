@@ -79,7 +79,24 @@ class WelcomePage extends StatelessWidget {
     );
   }
 
-  Widget _indicator() => Container();
+  Widget _indicator() => BlocBuilder<WelcomeCubit, int>(
+      builder: (context, page) => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              _items(context).length,
+              (index) => Container(
+                margin: const EdgeInsets.symmetric(horizontal: 3),
+                height: 8,
+                width: 8,
+                decoration: BoxDecoration(
+                  color: page == index
+                      ? const Color(0xFF256875)
+                      : const Color(0xFF256875).withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ));
 
   Widget _startMessagingButton(BuildContext context) => ElevatedButton(
         onPressed: () {},
