@@ -40,11 +40,14 @@ dependencies:
   equatable: ^2.0.5
   fimber: ^0.6.6
   intl: ^0.18.1
-  font_awesome_flutter: ^10.4.0
+  font_awesome_flutter: 9.2.0
   firebase_core: ^2.11.0
   provider: ^6.0.5
   shared_preferences: ^2.1.1
   app_settings: ^4.2.0
+  firebase_auth: ^4.6.0
+  google_sign_in: ^6.1.0
+  flutter_signin_button: ^2.0.0
 
 dev_dependencies:
   flutter_test:

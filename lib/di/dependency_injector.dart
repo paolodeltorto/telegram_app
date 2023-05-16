@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:telegram_app/cubits/dark_mode_cubit.dart';
@@ -26,7 +28,15 @@ class DependencyInjector extends StatelessWidget {
             create: (_) => SharedPreferencesProvider(
               sharedPreferences: SharedPreferences.getInstance(),
             ),
-          )
+          ),
+          Provider<FirebaseAuth>(
+            create: (_) => FirebaseAuth.instance,
+          ),
+          Provider<GoogleSignIn>(
+              create: (_) => GoogleSignIn(scopes: [
+                    'https://www.googleapis.com/auth/userinfo.email',
+                    'https://www.googleapis.com/auth/userinfo.profile',
+                  ]))
         ],
         child: child,
       );

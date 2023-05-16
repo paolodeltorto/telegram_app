@@ -133,7 +133,7 @@ class WelcomePage extends StatelessWidget {
         },
         {
           'image': const FaIcon(
-            FontAwesomeIcons.tachographDigital,
+            FontAwesomeIcons.tachometerAlt,
             size: 128,
             color: Colors.red,
           ),
