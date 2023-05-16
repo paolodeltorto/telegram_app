@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:fimber/fimber.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,7 +10,7 @@ class AuthCubit extends Cubit<AuthState> {
   final FirebaseAuth firebaseAuth;
   late StreamSubscription<User?> _streamSubscription;
   AuthCubit({required this.firebaseAuth})
-      : super(LoadingAuthenticationState() as AuthState) {
+      : super(LoadingAuthenticationState()) {
     _streamSubscription = firebaseAuth.userChanges().listen(_onStateChanged);
   }
   void _onStateChanged(User? user) {
@@ -19,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
       emit(NotAutehnticatedState());
       Fimber.d('User not autenticated');
     } else {
-      emit(AutenticatedState(user) as AuthState);
+      emit(AutenticatedState(user));
       Fimber.d('User is authenticated: $user');
     }
   }

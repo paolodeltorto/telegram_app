@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:telegram_app/cubits/dark_mode_cubit.dart';
 import 'package:telegram_app/providers/shared_preferences_provider_page.dart';
 
+import '../cubits/auth/auth_cubit.dart';
+
 class DependencyInjector extends StatelessWidget {
   final Widget child;
 
@@ -54,6 +56,12 @@ class DependencyInjector extends StatelessWidget {
             create: (context) => DarkModeCubit(
               preferencesProvider: context.read(),
             )..init(),
+          ),
+          BlocProvider<AuthCubit>(
+            create: (context) => AuthCubit(
+              firebaseAuth: context.read(),
+            ),
+            child: Container(),
           )
         ],
         child: child,

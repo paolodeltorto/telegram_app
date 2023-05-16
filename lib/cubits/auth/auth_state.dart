@@ -7,14 +7,15 @@ abstract class AuthState extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadingAuthenticationState {}
+class LoadingAuthenticationState extends AuthState {}
 
-class AutenticatedState {
+class AutenticatedState extends AuthState {
   final User user;
 
-  AutenticatedState(this.user);
+  const AutenticatedState(this.user);
 
-  List<Object?> get props => [user];
+  @override
+  List<Object> get props => [user];
 }
 
 class NotAutehnticatedState extends AuthState {}
