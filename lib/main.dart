@@ -12,5 +12,5 @@ Future<void> main() async {
   );
 
   Fimber.plantTree(DebugTree());
-  runApp(const App());
+  runApp(App());
 }
