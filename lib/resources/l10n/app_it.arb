@@ -3,7 +3,12 @@
 
     "action_open_settings": "Impostazioni",
     "action_start_chatting": "Inizia a messaggiare",
+    "action_login": "Login",
+    "action_sign_up": "Registrati",
 
+    "label_email": "Email",
+    "label_password":"Password",
+    "label_or": "o",
 
     "label_no_connection_msg1": "Oh no!!!!!",
     "label_no_connection_msg2": "Nessuna connessione disponibile!",

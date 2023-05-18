@@ -3,7 +3,15 @@
 
     "action_open_settings": "Open Settings",
     "action_start_chatting": "Start chatting",
+    "action_login": "Login",
+    "action_sign_up": "Sign Up",
 
+
+
+    "label_email": "Email",
+    "label_password":"Password",
+
+    "label_or": "or",
 
     "label_no_connection_msg1": "Oh no!!!!!",
     "label_no_connection_msg2": "No connection available!",
