@@ -8,6 +8,8 @@
     "label_no_connection_msg1": "Oh no!!!!!",
     "label_no_connection_msg2": "Nessuna connessione disponibile!",
 
+    "title_sign_in": "Accedi",
+
     "welcome_header_1":"Telegram",
     "welcome_header_2":"Veloce",
     "welcome_header_3":"Gratis",

@@ -4,11 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram_app/cubits/dark_mode_cubit.dart';
 import 'package:telegram_app/di/dependency_injector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:telegram_app/router/app_router.dart';
+import 'package:telegram_app/router/app_router.gr.dart';
 
 class App extends StatelessWidget {
   final _router = AppRouter();
-
   App({super.key});
 
   @override

@@ -1,11 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:telegram_app/cubits/welcome_cubit.dart';
 
-@RoutePage(name: 'welcome')
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
