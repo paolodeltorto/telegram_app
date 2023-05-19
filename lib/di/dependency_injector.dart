@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:telegram_app/cubits/dark_mode_cubit.dart';
 import 'package:telegram_app/providers/shared_preferences_provider_page.dart';
+import 'package:telegram_app/repositories/authentication_repository.dart';
 
 import '../cubits/auth/auth_cubit.dart';
 
@@ -19,8 +20,10 @@ class DependencyInjector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => _providers(
-        child: _blocs(
-          child: child,
+        child: _repositories(
+          child: _blocs(
+            child: child,
+          ),
         ),
       );
 
@@ -47,7 +50,14 @@ class DependencyInjector extends StatelessWidget {
         child: child,
       );
   Widget _repositories({required Widget child}) => MultiRepositoryProvider(
-        providers: const [],
+        providers: [
+          RepositoryProvider(
+            create: (context) => AuthenticationRepository(
+              firebaseAuth: context.read(),
+              googleSignIn: context.read(),
+            ),
+          )
+        ],
         child: child,
       );
   Widget _blocs({required Widget child}) => MultiBlocProvider(
