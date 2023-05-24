@@ -14,7 +14,7 @@ class SigningInState extends SignInState {}
 class SuccessSignInState extends SignInState {
   final UserCredential userCredential;
 
-  SuccessSignInState(this.userCredential);
+  const SuccessSignInState(this.userCredential);
 
   @override
   List<Object?> get props => [userCredential];

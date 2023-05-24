@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:telegram_app/repositories/authentication_repository.dart';
@@ -12,7 +12,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     required this.authenticationRepository,
   }) : super(InitialSignInState());
 
-  @override
   Stream<SignInState> mapEventToState(
     SignInEvent event,
   ) async* {

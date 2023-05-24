@@ -11,7 +11,7 @@ class PerformSignInEvent extends SignInEvent {
   final String email;
   final String password;
 
-  PerformSignInEvent({
+  const PerformSignInEvent({
     required this.email,
     required this.password,
   });

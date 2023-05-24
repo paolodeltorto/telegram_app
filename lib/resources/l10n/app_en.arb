@@ -5,6 +5,12 @@
     "action_start_chatting": "Start chatting",
     "action_login": "Login",
     "action_sign_up": "Sign Up",
+    "action_ok": "Ok",
+
+
+    "dialog_wrong_login_title":"Wrong Login.",
+    "dialog_wrong_login_message":"Wrong credentials.",
+
 
 
 

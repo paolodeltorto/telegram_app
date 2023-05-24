@@ -34,7 +34,7 @@ class AppRouter extends _i5.RootStackRouter {
     SignInRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i2.SignInPage(),
+        child: _i5.WrappedRoute(child: const _i2.SignInPage()),
       );
     },
     HomeRoute.name: (routeData) {

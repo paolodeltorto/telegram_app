@@ -26,7 +26,7 @@ class AuthenticationRepository {
       } else if (e.code == 'wrong-password') {
         Fimber.e('Wrong password provided for that user.');
       }
-      throw new WrongCredentialsExceptions();
+      throw WrongCredentialsExceptions();
     }
   }
 
@@ -42,6 +42,6 @@ class AuthenticationRepository {
       return await firebaseAuth.signInWithCredential(credentials);
     }
     Fimber.e('User canceled the login process');
-    throw new SignInCanceledException();
+    throw SignInCanceledException();
   }
 }

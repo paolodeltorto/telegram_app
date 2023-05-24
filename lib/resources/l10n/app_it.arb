@@ -5,6 +5,12 @@
     "action_start_chatting": "Inizia a messaggiare",
     "action_login": "Login",
     "action_sign_up": "Registrati",
+    "action_ok": "Ok",
+
+
+
+    "dialog_wrong_login_title":"Login errata.",
+    "dialog_wrong_login_message":"Le credenziali fornite sono errate.",
 
     "label_email": "Email",
     "label_password":"Password",
